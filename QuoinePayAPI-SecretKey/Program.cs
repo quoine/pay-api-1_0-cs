@@ -29,8 +29,8 @@ namespace QuoinePayAPI
             {
                 string data = new JavaScriptSerializer().Serialize(new
                 {
-                    email = "tinwald@gmail.com",
-                    password = "Password88"
+                    email = "sample@email.com",
+                    password = "Password**************"
                 });
 
                 streamWriter.Write(data);
