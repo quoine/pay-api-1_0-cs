@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoinePayAPI-GetInvoices", "..\QuoinePayAPI-GetInvoices\QuoinePayAPI-GetInvoices.csproj", "{53A6BC5E-EE45-4079-BE02-4B39CF70FA16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoinePayAPI-GetInvoice", "..\QuoinePayAPI-GetInvoice\QuoinePayAPI-GetInvoice.csproj", "{4218B9F5-9C8F-42F5-A6DB-799109878186}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoinePayAPI-GetMerchantAccount", "..\QuoinePayAPI-GetMerchantAccount\QuoinePayAPI-GetMerchantAccount.csproj", "{031AF6BE-EB81-4C12-ACA1-6B436891629B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoineAPI.Lib", "..\QuoineAPI.Lib\QuoineAPI.Lib.csproj", "{7C5171C8-0233-47EF-BA36-CC6A41366C2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoinePayAPI-Console", "..\QuoinePayAPI-Console\QuoinePayAPI-Console.csproj", "{4147ACFF-8C35-42EC-B52A-B40D5A679C47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoinePayAPI-ApiSecretKey", "..\QuoinePayAPI-SecretKey\QuoinePayAPI-ApiSecretKey.csproj", "{BE8DD897-B791-4950-8A60-FA1538565534}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoinePayAPI-UpdateCallbackURL", "..\QuoinePayAPI-UpdateCallbackURL\QuoinePayAPI-UpdateCallbackURL.csproj", "{3A0B57E6-3914-437C-8136-F9452FAD8AFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53A6BC5E-EE45-4079-BE02-4B39CF70FA16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53A6BC5E-EE45-4079-BE02-4B39CF70FA16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53A6BC5E-EE45-4079-BE02-4B39CF70FA16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53A6BC5E-EE45-4079-BE02-4B39CF70FA16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4218B9F5-9C8F-42F5-A6DB-799109878186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4218B9F5-9C8F-42F5-A6DB-799109878186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4218B9F5-9C8F-42F5-A6DB-799109878186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4218B9F5-9C8F-42F5-A6DB-799109878186}.Release|Any CPU.Build.0 = Release|Any CPU
+		{031AF6BE-EB81-4C12-ACA1-6B436891629B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{031AF6BE-EB81-4C12-ACA1-6B436891629B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{031AF6BE-EB81-4C12-ACA1-6B436891629B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{031AF6BE-EB81-4C12-ACA1-6B436891629B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C5171C8-0233-47EF-BA36-CC6A41366C2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C5171C8-0233-47EF-BA36-CC6A41366C2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C5171C8-0233-47EF-BA36-CC6A41366C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C5171C8-0233-47EF-BA36-CC6A41366C2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4147ACFF-8C35-42EC-B52A-B40D5A679C47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4147ACFF-8C35-42EC-B52A-B40D5A679C47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4147ACFF-8C35-42EC-B52A-B40D5A679C47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4147ACFF-8C35-42EC-B52A-B40D5A679C47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE8DD897-B791-4950-8A60-FA1538565534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE8DD897-B791-4950-8A60-FA1538565534}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE8DD897-B791-4950-8A60-FA1538565534}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE8DD897-B791-4950-8A60-FA1538565534}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A0B57E6-3914-437C-8136-F9452FAD8AFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0B57E6-3914-437C-8136-F9452FAD8AFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0B57E6-3914-437C-8136-F9452FAD8AFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A0B57E6-3914-437C-8136-F9452FAD8AFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
