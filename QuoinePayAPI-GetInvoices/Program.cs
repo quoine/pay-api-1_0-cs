@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
-using QuoineAPI.Lib;
+using QuoinePayAPI.Lib;
 
 namespace QuoinePayAPI.GetInvoices
 {
@@ -19,7 +19,7 @@ namespace QuoinePayAPI.GetInvoices
             // Do NOT use this setting in production systems
             System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 
-            string url = "https://pay.quoine.com/api/v1/invoices";
+            var url = Settings.BaseTestingURL + Settings.GetInvoicesURI;
             string key = Utility.GetAPISecretKey();
             var request = Utility.Create(url, key, string.Empty);
  

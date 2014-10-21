@@ -7,7 +7,7 @@
     <ProjectGuid>{7C5171C8-0233-47EF-BA36-CC6A41366C2F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QuoineAPI.Lib</RootNamespace>
+    <RootNamespace>QuoinePayAPI.Lib</RootNamespace>
     <AssemblyName>QuoineAPI.Lib</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Settings.cs" />
     <Compile Include="Utility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

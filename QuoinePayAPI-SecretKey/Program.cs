@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
-using QuoineAPI.Lib;
+using QuoinePayAPI.Lib;
 
 namespace QuoinePayAPI
 {
@@ -18,11 +18,11 @@ namespace QuoinePayAPI
             // Do NOT use this setting in production systems
             System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 
-            var request = System.Net.WebRequest.Create("https://pay.quoine.com/api/api_secret_key/") as System.Net.HttpWebRequest;
+            var url = Settings.BaseTestingURL + Settings.GetAPIKeyURI;            
+            var request = System.Net.WebRequest.Create(url) as System.Net.HttpWebRequest;
             request.KeepAlive = false;
-
-            request.ContentType = "application/json";
-            request.Accept = "application/json";
+            request.ContentType = Settings.ContentType;
+            request.Accept = Settings.ContentType;
             request.Method = "POST";
 
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))

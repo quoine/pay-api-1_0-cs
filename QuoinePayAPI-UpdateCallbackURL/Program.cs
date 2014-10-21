@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
-using QuoineAPI.Lib;
+using QuoinePayAPI.Lib;
 
 namespace QuoinePayAPI.UpdateCallbackURL
 {
@@ -17,7 +17,8 @@ namespace QuoinePayAPI.UpdateCallbackURL
             // Do NOT use this setting in production systems
             System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
   
-            string url = "https://pay.quoine.com/api/v1/payments_callback_url";
+            var url = Settings.BaseTestingURL + Settings.SetPaymentsCallbackURI;
+
             string key = Utility.GetAPISecretKey();
 
             string data = new JavaScriptSerializer().Serialize(new
