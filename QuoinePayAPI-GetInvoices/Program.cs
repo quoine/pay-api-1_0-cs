@@ -30,7 +30,6 @@ namespace QuoinePayAPI.GetInvoices
                     StreamReader readStream = new StreamReader(stream);
                     string contents = readStream.ReadToEnd();
                     dynamic json = System.Web.Helpers.Json.Decode(contents);
-                    //Console.WriteLine(json.Name);
                     Console.ReadLine();
                 }
             }

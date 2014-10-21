@@ -29,12 +29,14 @@ namespace QuoineAPI.Lib
 
         public static string GetAPISecretKey()
         {
-            return ConfigurationSettings.AppSettings["Quoine_API_Key"] ?? "Error - No API Key stored in configuration file";
+            var key = ConfigurationSettings.AppSettings["Quoine_API_Key"]; 
+            return key ?? "Error - No API Key stored in configuration file";
         }
 
         public static string GetUserId()
         {
-            return ConfigurationSettings.AppSettings["Quoine_API_UserId"] ?? "Error - No User ID stored in configuration file";
+            var userId = ConfigurationSettings.AppSettings["Quoine_API_UserId"];
+            return userId ?? "Error - No User ID stored in configuration file";
         }
         private static byte[] GetBytes(string str)
         {
