@@ -19,9 +19,9 @@ namespace QuoinePayAPI.GetInvoices
             // Do NOT use this setting in production systems
             System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 
-            string url = "https://pay.quoine.com/api/invoices/";
+            string url = "https://pay.quoine.com/api/v1/invoices";
             string key = Utility.GetAPISecretKey();
-            var request = Utility.Create(url, key,string.Empty);
+            var request = Utility.Create(url, key, string.Empty);
  
             using (WebResponse response = request.GetResponse())
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,15 +20,8 @@ namespace QuoineAPI.Lib
             request.ContentType = "application/json";
             request.Accept = "application/json";
             request.Method = method;
-            request.ContentType = "application/json";
-            request.Date = new DateTime( 
-                    timestamp.ToUniversalTime().Year,
-                    timestamp.ToUniversalTime().Month,
-                    timestamp.ToUniversalTime().Day,
-                    timestamp.ToUniversalTime().Hour,
-                    timestamp.ToUniversalTime().Minute,
-                    timestamp.ToUniversalTime().Second,
-                    DateTimeKind.Utc);
+            MethodInfo priMethod = request.Headers.GetType().GetMethod("AddWithoutValidate", BindingFlags.Instance | BindingFlags.NonPublic);
+            priMethod.Invoke(request.Headers, new object[] { "Date", timestamp.ToString("r")  });
             request.Headers.Add("Content-MD5", Utility.GetMD5(string.Empty));
             request.Headers.Add("Authorization", Utility.GetAuthorization(key, Utility.GetMD5(content), timestamp.ToString("r"), url));
             return request;
@@ -35,12 +29,12 @@ namespace QuoineAPI.Lib
 
         public static string GetAPISecretKey()
         {
-            return ConfigurationSettings.AppSettings["Quoine_API_Key"] ?? Guid.NewGuid().ToString();
+            return ConfigurationSettings.AppSettings["Quoine_API_Key"] ?? "Error - No API Key stored in configuration file";
         }
 
         public static string GetUserId()
         {
-            return ConfigurationSettings.AppSettings["Quoine_API_UserId"] ?? Guid.NewGuid().ToString();
+            return ConfigurationSettings.AppSettings["Quoine_API_UserId"] ?? "Error - No User ID stored in configuration file";
         }
         private static byte[] GetBytes(string str)
         {
@@ -83,19 +77,20 @@ namespace QuoineAPI.Lib
         /// <param name="date">Date - Timestamp of the request send time e.g. "Sat, 25 September 2014 08:00:01 GMT"</param>
         /// <param name="url">API URL e.g. https://pay.quoine.com/api/v1/invoices </param>
         /// <returns></returns>
-        public static string GetAuthorization(string key, string content, string date, string url)
+        public static string GetAuthorization(string key, string MD5hash, string date, string url)
         {
             string encoded = string.Empty;
             byte[] hash = null;
 
-            var data = Utility.GetInputString("application/json", Utility.GetMD5(content), url, date);
+            var data = Utility.GetInputString("application/json", MD5hash, url, date);
             try
             {
                 // byte array representation of that string
                 byte[] encodedString = new UTF8Encoding().GetBytes(data);
 
                 //var hashedKey = SHA1.Create().ComputeHash(Encoding.UTF8.GetBytes(key));
-                var hashedKey = Encoding.UTF8.GetBytes(key);
+                var hashedKey = SHA1.Create().ComputeHash(Encoding.UTF8.GetBytes(key));
+
                 // Initialize the keyed hash object. 
                 using (HMACSHA1 hmac = new HMACSHA1(hashedKey))
                 {

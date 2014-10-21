@@ -17,7 +17,7 @@ namespace QuoinePayAPI.UpdateCallbackURL
             // Do NOT use this setting in production systems
             System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
   
-            string url = "https://pay.quoine.com/api/payment_callback_url";
+            string url = "https://pay.quoine.com/api/v1/payments_callback_url";
             string key = Utility.GetAPISecretKey();
 
             string data = new JavaScriptSerializer().Serialize(new

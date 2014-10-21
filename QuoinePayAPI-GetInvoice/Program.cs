@@ -20,7 +20,7 @@ namespace QuoinePayAPI.GetInvoice
             System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 
             var key = Utility.GetAPISecretKey();
-            string url = String.Format("https://pay.quoine.com/api/invoices/{0}", "9");
+            string url = String.Format("https://pay.quoine.com/api/v1/invoices/{0}", "33");
             var request = Utility.Create(url, key, string.Empty);
 
             using (WebResponse response = request.GetResponse())
